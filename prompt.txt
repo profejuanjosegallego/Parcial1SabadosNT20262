@@ -1,0 +1,287 @@
+Act as an experienced Python programming instructor and developer.
+
+I need you to write a complete Python solution for the following programming exercise.
+
+The final code must be written in Python and all user-facing messages, variable names, function names, and comments must be in Spanish.
+
+## EXERCISE
+
+A company that provides energy consulting services helps small neighborhood businesses identify high electricity consumption.
+
+During a visit, basic information about each business and four weekly electricity consumption measurements are recorded.
+
+The program must organize the data, calculate simple indicators, and detect businesses that should receive an energy-saving recommendation.
+
+## DATA STRUCTURE
+
+Each business must be represented by a DICTIONARY and all businesses must be stored inside a LIST.
+
+Each business dictionary must contain exactly these main attributes:
+
+* nit: Business identifier.
+* nombre: Business name.
+* tipo: Tienda, Restaurante, or Peluquería.
+* empleados: Number of employees.
+* meta_semanal: Maximum weekly consumption target in kWh.
+* consumos: A list containing exactly 4 weekly consumption measurements.
+
+The structure must therefore be:
+
+A list
+→ contains dictionaries
+→ each dictionary represents one business
+→ the "consumos" key contains a list with 4 values.
+
+## EXACTLY 6 MAIN FUNCTIONS
+
+The program must contain EXACTLY these six main functions:
+
+1. registrar_comercios()
+2. registrar_consumos(comercios)
+3. calcular_promedio(consumos)
+4. calcular_variacion(consumos)
+5. clasificar_consumo(promedio, meta, variacion)
+6. generar_informe(comercios)
+
+Do not create additional main functions.
+
+## 1. registrar_comercios()
+
+This function must register exactly 10 businesses.
+
+For every business, request:
+
+* NIT
+* Nombre
+* Tipo
+* Número de empleados
+* Meta semanal de consumo
+
+The "tipo" should correspond to one of:
+
+* Tienda
+* Restaurante
+* Peluquería
+
+Each business must be represented as a dictionary and its "consumos" value must initially be an empty list.
+
+The function must return the list containing the 10 businesses.
+
+Validate numeric inputs appropriately so the program does not crash if the user enters invalid numeric data.
+
+## 2. registrar_consumos(comercios)
+
+For every business, request exactly 4 weekly electricity consumption values.
+
+Every consumption must be greater than 0.
+
+If the user enters 0, a negative number, or invalid text, ask again.
+
+Store the four values in the "consumos" list of the corresponding business dictionary.
+
+Return the updated list of businesses.
+
+## 3. calcular_promedio(consumos)
+
+Calculate the average of the four consumption measurements MANUALLY.
+
+Requirements:
+
+* Use a loop.
+* Use an accumulator.
+* Do NOT use sum().
+* Do NOT use any equivalent function.
+
+Return the calculated average.
+
+## 4. calcular_variacion(consumos)
+
+Calculate the percentage variation between the first and fourth week using exactly this formula:
+
+((semana4 - semana1) / semana1) * 100
+
+Return the percentage variation.
+
+The first measurement is the first element of the consumption list and the fourth measurement is the fourth element.
+
+## 5. clasificar_consumo(promedio, meta, variacion)
+
+Classify each business according to these rules:
+
+### Eficiente
+
+When:
+
+promedio <= meta
+
+AND
+
+variacion <= 5%
+
+### En observación
+
+When:
+
+promedio <= meta
+
+AND
+
+variacion > 5%
+
+### Alto
+
+When:
+
+promedio > meta
+
+AND
+
+the average does not exceed the meta by more than 20%.
+
+In other words, the average is greater than the meta but less than or equal to meta * 1.20.
+
+### Crítico
+
+When:
+
+the average exceeds the meta by more than 20%.
+
+The function must return the corresponding classification as a string.
+
+## 6. generar_informe(comercios)
+
+For every business, calculate:
+
+* Average consumption.
+* Percentage variation.
+* Classification.
+
+Use the previously created functions:
+
+* calcular_promedio()
+* calcular_variacion()
+* clasificar_consumo()
+
+Display for each business:
+
+* Nombre.
+* Promedio.
+* Variación.
+* Clasificación.
+
+At the end, display how many businesses belong to each classification:
+
+* Eficiente
+* En observación
+* Alto
+* Crítico
+
+Also determine which business has the highest average consumption.
+
+IMPORTANT:
+
+The highest average MUST be found manually using:
+
+* A loop.
+* A comparison.
+* Variables to keep track of the highest average and the corresponding business.
+
+DO NOT use:
+
+* max()
+* sorted()
+* min()
+* Any equivalent function.
+
+## TECHNICAL RESTRICTIONS
+
+This exercise MUST use BASIC PROCEDURAL PROGRAMMING.
+
+DO NOT use Object-Oriented Programming (OOP / POO).
+
+DO NOT use:
+
+* Classes.
+* Objects created from custom classes.
+* **init**.
+* self.
+* Methods.
+* Inheritance.
+* Encapsulation.
+* Polymorphism.
+* Dataclasses.
+* Custom objects.
+* Any other OOP concept.
+
+The businesses MUST be dictionaries inside a list.
+
+Do NOT create a Business class.
+
+Use only:
+
+* Functions.
+* Lists.
+* Dictionaries.
+* Variables.
+* Loops.
+* Conditionals.
+* Basic operators.
+* Input.
+* Output.
+* Return values.
+* Counters.
+* Accumulators.
+
+Also:
+
+* Do not use external libraries.
+* Do not use files.
+* Do not use databases.
+* Do not use statistical modules.
+* Do not use sum().
+* Do not use max().
+* Do not use min().
+* Do not use sorted().
+* Do not use equivalent functions to perform the central calculations.
+* Do not use advanced programming techniques that are unnecessary for this beginner exercise.
+
+## FUNCTION CALLS
+
+All six required functions must be called during the execution of the program.
+
+The main execution should logically:
+
+1. Call registrar_comercios().
+2. Call registrar_consumos(comercios).
+3. Call generar_informe(comercios).
+
+The functions calcular_promedio(), calcular_variacion(), and clasificar_consumo() should be used by generar_informe().
+
+## CODE STYLE
+
+Write clean, readable Python suitable for a beginner who is learning:
+
+* Functions.
+* Lists.
+* Dictionaries.
+* Loops.
+* Conditionals.
+* Input validation.
+* Accumulators.
+* Counters.
+* Return values.
+
+Do not over-engineer the solution.
+
+Do not use techniques that are more advanced than what is required by the exercise.
+
+Use descriptive Spanish names.
+
+Keep the solution close to the requirements given by the teacher.
+
+The final answer should contain:
+
+1. The complete Python code.
+2. A brief explanation of how the code satisfies the six required functions and the technical restrictions.
+
+Do not replace the required structure with a different programming approach.
